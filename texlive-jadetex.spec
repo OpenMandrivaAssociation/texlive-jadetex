@@ -16,7 +16,8 @@ Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jadetex.doc.tar.x
 Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jadetex.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
-Requires(post):	texlive-tlpkg
+Requires(pre):	texlive-tlpkg
+Requires(post):	texlive-kpathsea
 Requires:	texlive-latex
 Requires:	texlive-pdftex
 Requires:	texlive-tex
@@ -44,8 +45,8 @@ DSSSL implementation.
     %_texmf_mktexlsr_pre
 
 %post
-    %_texmf_fmtutil_post
     %_texmf_mktexlsr_post
+    %_texmf_fmtutil_post
 
 %preun
     if [ $1 -eq 0 ]; then
@@ -55,8 +56,8 @@ DSSSL implementation.
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_fmtutil_post
 	%_texmf_mktexlsr_post
+	%_texmf_fmtutil_post
     fi
 
 #-----------------------------------------------------------------------
