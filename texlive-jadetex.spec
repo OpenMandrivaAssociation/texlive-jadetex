@@ -23,8 +23,6 @@ Requires:	texlive-pdftex
 Requires:	texlive-tex
 Requires:	texlive-jadetex.bin
 Provides:	jadetex = %{version}
-Provides:	texlive-jadetex = %{version}
-Provides:	texlive-texmf-jadetex = %{version}
 Obsoletes:	jadetex <= 3.12
 Conflicts:	jadetex <= 3.12
 Obsoletes:	texlive-texmf-jadetex <= 2007
