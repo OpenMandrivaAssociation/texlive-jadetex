@@ -24,33 +24,19 @@ Requires:	texlive-tex
 Requires:	texlive-jadetex.bin
 %rename jadetex
 %rename texlive-texmf-jadetex
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
+
 Requires(post):	texlive-tetex
 
 %description
 Macro package on top of LaTeX to typeset TeX output of the Jade
 DSSSL implementation.
 
-%pre
-    %_texmf_fmtutil_pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-    %_texmf_fmtutil_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_fmtutil_pre
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
-	%_texmf_fmtutil_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -80,7 +66,6 @@ DSSSL implementation.
 %doc %{_texmfdistdir}/source/jadetex/base/Makefile
 %doc %{_texmfdistdir}/source/jadetex/base/jadetex.dtx
 %doc %{_texmfdistdir}/source/jadetex/base/jadetex.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -91,8 +76,6 @@ DSSSL implementation.
 %install
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/jadetex <<EOF
 jadetex pdftex language.dat *jadetex.ini
