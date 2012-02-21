@@ -6,7 +6,7 @@
 # catalog-version 3.13
 Name:		texlive-jadetex
 Version:	3.13
-Release:	3
+Release:	4
 Summary:	Macros supporting Jade DSSSL output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/jadetex/jadetex-3.13.tar.gz
@@ -18,14 +18,12 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
+Requires(post):	texlive-tetex
 Requires:	texlive-latex
 Requires:	texlive-pdftex
 Requires:	texlive-tex
 Requires:	texlive-jadetex.bin
 %rename jadetex
-%rename texlive-texmf-jadetex
-
-Requires(post):	texlive-tetex
 
 %description
 Macro package on top of LaTeX to typeset TeX output of the Jade
@@ -78,6 +76,8 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/jadetex <<EOF
+#
+# from jadetex:
 jadetex pdftex language.dat *jadetex.ini
 pdfjadetex pdftex language.dat *pdfjadetex.ini
 EOF
