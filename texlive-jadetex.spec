@@ -81,3 +81,27 @@ cat > %{buildroot}%{_texmf_fmtutil_d}/jadetex <<EOF
 jadetex pdftex language.dat *jadetex.ini
 pdfjadetex pdftex language.dat *pdfjadetex.ini
 EOF
+
+
+%changelog
+* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.13-4
++ Revision: 778434
+- Rebuild after tlpobj2spec.pl bug correction.
+
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.13-3
++ Revision: 752892
+- Rebuild to reduce used resources
+
+* Sun Nov 13 2011 Paulo Andrade <pcpa@mandriva.com.br> 3.13-2
++ Revision: 730326
+- Use rename macro instead of mix of provides/conflicts/obsoletes
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 3.13-1
++ Revision: 718966
+- texlive-jadetex
+- texlive-jadetex
+- texlive-jadetex
+- texlive-jadetex
+- texlive-jadetex
+- texlive-jadetex
+
