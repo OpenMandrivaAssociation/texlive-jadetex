@@ -1,12 +1,12 @@
-# revision 23409
+# revision 31988
 # category Package
 # catalog-ctan /macros/jadetex/jadetex-3.13.tar.gz
-# catalog-date 2008-04-20 19:53:04 +0200
+# catalog-date 2012-06-23 19:46:16 +0200
 # catalog-license other-free
 # catalog-version 3.13
 Name:		texlive-jadetex
 Version:	3.13
-Release:	4
+Release:	5
 Summary:	Macros supporting Jade DSSSL output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/jadetex/jadetex-3.13.tar.gz
@@ -46,6 +46,10 @@ DSSSL implementation.
 %{_texmfdistdir}/tex/jadetex/base/uentities.sty
 %{_texmfdistdir}/tex/jadetex/base/ut1omlgc.fd
 %_texmf_fmtutil_d/jadetex
+%doc %{_mandir}/man1/jadetex.1*
+%doc %{_texmfdistdir}/doc/man/man1/jadetex.man1.pdf
+%doc %{_mandir}/man1/pdfjadetex.1*
+%doc %{_texmfdistdir}/doc/man/man1/pdfjadetex.man1.pdf
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/ChangeLog
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/ChangeLog-old
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/Makefile
@@ -54,10 +58,8 @@ DSSSL implementation.
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/index.html
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/index.xml
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/index.xsl
-%doc %{_texmfdistdir}/doc/otherformats/jadetex/base/jadetex.1
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/jadetex.cfg
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/logo.png
-%doc %{_texmfdistdir}/doc/otherformats/jadetex/base/pdfjadetex.1
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/releasenotes.dsl
 %doc %{_texmfdistdir}/doc/otherformats/jadetex/base/releasenotes.xml
 #- source
@@ -74,6 +76,8 @@ DSSSL implementation.
 %install
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_mandir}/man1
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/jadetex <<EOF
 #
@@ -81,27 +85,3 @@ cat > %{buildroot}%{_texmf_fmtutil_d}/jadetex <<EOF
 jadetex pdftex language.dat *jadetex.ini
 pdfjadetex pdftex language.dat *pdfjadetex.ini
 EOF
-
-
-%changelog
-* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.13-4
-+ Revision: 778434
-- Rebuild after tlpobj2spec.pl bug correction.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.13-3
-+ Revision: 752892
-- Rebuild to reduce used resources
-
-* Sun Nov 13 2011 Paulo Andrade <pcpa@mandriva.com.br> 3.13-2
-+ Revision: 730326
-- Use rename macro instead of mix of provides/conflicts/obsoletes
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 3.13-1
-+ Revision: 718966
-- texlive-jadetex
-- texlive-jadetex
-- texlive-jadetex
-- texlive-jadetex
-- texlive-jadetex
-- texlive-jadetex
-
