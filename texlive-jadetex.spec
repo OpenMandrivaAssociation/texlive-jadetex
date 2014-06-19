@@ -1,4 +1,4 @@
-# revision 31988
+# revision 33694
 # category Package
 # catalog-ctan /macros/jadetex/jadetex-3.13.tar.gz
 # catalog-date 2012-06-23 19:46:16 +0200
@@ -6,7 +6,7 @@
 # catalog-version 3.13
 Name:		texlive-jadetex
 Version:	3.13
-Release:	10
+Release:	11
 Summary:	Macros supporting Jade DSSSL output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/jadetex/jadetex-3.13.tar.gz
@@ -20,6 +20,7 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Requires(post):	texlive-tetex
 Requires:	texlive-latex
+Requires:	texlive-passivetex
 Requires:	texlive-pdftex
 Requires:	texlive-tex
 Requires:	texlive-jadetex.bin
