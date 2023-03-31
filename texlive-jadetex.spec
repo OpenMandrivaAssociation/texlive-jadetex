@@ -1,6 +1,6 @@
 Name:		texlive-jadetex
 Version:	63654
-Release:	1
+Release:	2
 Summary:	Macros supporting Jade DSSSL output
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/jadetex/jadetex-3.13.tar.gz
