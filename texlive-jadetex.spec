@@ -1,5 +1,5 @@
 Name:		texlive-jadetex
-Version:	67493
+Version:	69742
 Release:	1
 Summary:	Macros supporting Jade DSSSL output
 Group:		Publishing
