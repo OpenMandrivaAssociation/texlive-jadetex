@@ -3,7 +3,7 @@ Version:	71409
 Release:	1
 Summary:	Macros supporting Jade DSSSL output
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/jadetex/jadetex-3.13.tar.gz
+URL:		https://www.ctan.org/tex-archive/macros/jadetex/jadetex-3.13.tar.gz
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jadetex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jadetex.doc.r%{version}.tar.xz
