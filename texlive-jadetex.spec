@@ -1,5 +1,6 @@
 %global tl_name jadetex
 %global tl_revision 79618
+%global tl_bin_links jadetex:pdftex pdfjadetex:pdftex
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -69,6 +70,8 @@ Requires:	texlive(url)
 Requires:	texlive(wasysym)
 Requires:	texlive(zapfding)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 Macro package on top of LaTeX to typeset TeX output of the Jade DSSSL
