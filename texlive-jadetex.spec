@@ -1,15 +1,15 @@
 %global tl_name jadetex
-%global tl_revision 79618
+%global tl_revision 79862
 %global tl_bin_links jadetex:pdftex pdfjadetex:pdftex
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	3.13
+Version:	3.14
 Release:	%{tl_revision}.1
 Summary:	Macros supporting Jade DSSSL output
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/plain/formats/jadetex
-License:	other-free
+License:	mit
 Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jadetex.r%{tl_revision}.tar.xz
 Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jadetex.doc.r%{tl_revision}.tar.xz
 Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jadetex.source.r%{tl_revision}.tar.xz
